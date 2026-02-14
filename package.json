@@ -1,0 +1,84 @@
+{
+  "name": "hn-status-bar",
+  "displayName": "HN Status Bar",
+  "description": "Show rotating Hacker News stories in the VS Code status bar.",
+  "version": "0.0.1",
+  "publisher": "sumant",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:hnStatusBar.refresh",
+    "onCommand:hnStatusBar.openCurrent"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hnStatusBar.refresh",
+        "title": "HN Status Bar: Refresh Stories"
+      },
+      {
+        "command": "hnStatusBar.openCurrent",
+        "title": "HN Status Bar: Open Current Story"
+      }
+    ],
+    "configuration": {
+      "title": "HN Status Bar",
+      "properties": {
+        "hnStatusBar.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Hacker News stories in the status bar."
+        },
+        "hnStatusBar.maxItems": {
+          "type": "number",
+          "default": 30,
+          "minimum": 1,
+          "maximum": 100,
+          "description": "Maximum number of stories to fetch from Hacker News."
+        },
+        "hnStatusBar.displaySeconds": {
+          "type": "number",
+          "default": 20,
+          "minimum": 1,
+          "maximum": 300,
+          "description": "How long each story is shown in the status bar (seconds)."
+        },
+        "hnStatusBar.gapSeconds": {
+          "type": "number",
+          "default": 2,
+          "minimum": 0,
+          "maximum": 60,
+          "description": "How long to hide the status bar between stories (seconds)."
+        },
+        "hnStatusBar.refreshMinutes": {
+          "type": "number",
+          "default": 15,
+          "minimum": 1,
+          "maximum": 240,
+          "description": "How often stories are refreshed from Hacker News (minutes)."
+        },
+        "hnStatusBar.showScore": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show story score in the status bar text."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.3"
+  }
+}
