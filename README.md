@@ -2,6 +2,10 @@
 
 A VS Code extension that shows rotating Hacker News stories in the status bar.
 
+## Screenshot
+
+![HN Status Bar Screenshot](./HN%20Status%20VSCODE.png)
+
 ## Features
 
 - Fetches top stories from Hacker News API.
