@@ -1,15 +1,21 @@
 {
   "name": "hn-status-bar",
-  "displayName": "HN Status Bar",
+  "displayName": "Hacker News Status Bar",
   "description": "Show rotating Hacker News stories in the VS Code status bar.",
-  "version": "0.0.1",
-  "publisher": "sumant",
+  "version": "0.0.2",
+  "publisher": "SumantSogikar",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumant1122/hn-status-bar-extension"
+},
+"icon": "images/icon.png",
   "categories": [
     "Other"
   ],
+  "pricing": "Free",
   "activationEvents": [
     "onStartupFinished",
     "onCommand:hnStatusBar.refresh",
